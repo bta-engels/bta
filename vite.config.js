@@ -1,9 +1,11 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
-import fs from 'fs';
-const host = 'bta.test';
+//import basicSsl from '@vitejs/plugin-basic-ssl'
+//import fs from 'fs';
+//const host = 'bta.test';
 export default defineConfig({
     plugins: [
+//        basicSsl(),
         laravel({
             input: [
                 'resources/css/app.css',
@@ -12,6 +14,7 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+/*
     server: {
         host,
         hmr: { host },
@@ -19,5 +22,7 @@ export default defineConfig({
             key: fs.readFileSync(`./nginx/certs/${host}.key`),
             cert: fs.readFileSync(`./nginx/certs/${host}.pem`),
         },
+        origin: 'https://bta.test',
     },
+*/
 });
